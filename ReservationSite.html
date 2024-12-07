@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reservation Site</h1>
+        
+        <div class="section" id="computerShop">
+            <h2>Computer Shop Reservation</h2>
+            <form id="computerForm">
+                <label for="computerName">Name:</label>
+                <input type="text" id="computerName" name="name" required>
+
+                <label for="computerEmail">Email:</label>
+                <input type="email" id="computerEmail" name="email" required>
+
+                <label for="computerDate">Date:</label>
+                <input type="date" id="computerDate" name="date" required>
+
+                <label for="computerTime">Time:</label>
+                <input type="time" id="computerTime" name="time" required>
+
+                <button type="submit">Reserve Computer</button>
+            </form>
+        </div>
+        
+        <div class="section" id="vrRoom">
+            <h2>VR Room Reservation</h2>
+            <form id="vrForm">
+                <label for="vrName">Name:</label>
+                <input type="text" id="vrName" name="name" required>
+
+                <label for="vrEmail">Email:</label>
+                <input type="email" id="vrEmail" name="email" required>
+
+                <label for="vrDate">Date:</label>
+                <input type="date" id="vrDate" name="date" required>
+
+                <label for="vrTime">Time:</label>
+                <input type="time" id="vrTime" name="time" required>
+
+                <button type="submit">Reserve VR Room</button>
+            </form>
+        </div>
+        
+        <div class="section" id="ps5Gaming">
+            <h2>PS5 Gaming Reservation</h2>
+            <form id="ps5Form">
+                <label for="ps5Name">Name:</label>
+                <input type="text" id="ps5Name" name="name" required>
+
+                <label for="ps5Email">Email:</label>
+                <input type="email" id="ps5Email" name="email" required>
+
+                <label for="ps5Date">Date:</label>
+                <input type="date" id="ps5Date" name="date" required>
+
+                <label for="ps5Time">Time:</label>
+                <input type="time" id="ps5Time" name="time" required>
+
+                <button type="submit">Reserve PS5</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const forms = ['computerForm', 'vrForm', 'ps5Form'];
+        forms.forEach(formId => {
+            document.getElementById(formId).addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert(`${formId.replace('Form', '').replace(/([A-Z])/g, ' $1')} reservation submitted!`);
+            });
+        });
+    </script>
+</body>
+</html>
